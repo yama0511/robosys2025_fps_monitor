@@ -11,20 +11,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup ROS 2 workspace
+        run: |
+          mkdir -p ~/ros2_ws/src/robosys2025_fps_monitor
+          cp -r . ~/ros2_ws/src/robosys2025_fps_monitor/
+
       - name: Install dependencies
         run: |
           apt-get update
           apt-get install -y python3-pip
           rosdep update
+          cd ~/ros2_ws
           rosdep install -i --from-path src --rosdistro humble -y
 
       - name: Build and test
         run: |
           . /opt/ros/humble/setup.sh
+          cd ~/ros2_ws
           colcon build --symlink-install
           colcon test --event-handlers console_direct+
 
       - name: Run custom test script
         run: |
-          . /opt/ros/humble/setup.sh
-          . install/setup.sh
+          bash ~/ros2_ws/src/robosys2025_fps_monitor/test/test.bash
