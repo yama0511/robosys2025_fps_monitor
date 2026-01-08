@@ -3,7 +3,7 @@
 
 from setuptools import setup
 
-package_name = 'fps_monitor'
+package_name = 'robosys2025_fps_monitor'
 
 setup(
     name=package_name,
@@ -24,8 +24,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'sensor_sim = fps_monitor.sensor_sim:main',
-            'fps_calc = fps_monitor.fps_calc:main',
+            'sensor_sim = robosys2025_fps_monitor.sensor_sim:main',
+            'fps_calc = robosys2025_fps_monitor.fps_calc:main',
+
         ],
     },
 )
