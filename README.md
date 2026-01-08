@@ -11,6 +11,21 @@
 * ROS 2 Humble
 * Python 3.10
 
+## ノードとトピック
+### sensor_sim
+センサーデータを模した値をランダムな間隔 (約10Hz〜60Hz) で送信するシミュレータノードです。
+
+* **Publishers**
+  * `/sensor_data` (std_msgs/msg/Float32): 疑似センサーデータ
+
+### fps_calc
+受信したセンサーデータの時間間隔からフレームレート (FPS) をリアルタイムで計算するノードです。
+
+* **Subscribers**
+  * `/sensor_data` (std_msgs/msg/Float32): 疑似センサーデータ
+* **Publishers**
+  * `/current_fps` (std_msgs/msg/Float32): 計算された現在のFPS値
+
 ## インストール
 ROS 2 ワークスペースの `src` ディレクトリに本リポジトリをクローンし、ワークスペースのルートディレクトリでビルドしてください。
 ```bash
