@@ -59,7 +59,7 @@ ros2 run fps_monitor fps_calc
 ```Bash
 ros2 run rqt_plot rqt_plot
 ```
-3. Topic欄に /current_fps/data と入力して追加する。
+3. 起動した rqt_plot ウィンドウの画面上部にある Topic 入力欄に /current_fps/data と入力し、右側の + ボタンを押してグラフを表示させる。
 
 ## ライセンス
 このソフトウェアは、BSD 3-Clause License の下で公開されています。 詳細については LICENSE をご確認ください。
