@@ -34,7 +34,7 @@ git clone [https://github.com/yama0511/robosys2025-fps_monitor.git](https://gith
 
 # 依存関係のインストールとビルド
 rosdep install -i --from-path src --rosdistro humble -y
-colcon build --packages-select fps_monitor
+colcon build --packages-select robosys2025_fps_monitor
 
 # セットアップファイルの読み込み
 source install/setup.bash
@@ -42,7 +42,7 @@ source install/setup.bash
 
 #### 3. 保存してプッシュ
 ```bash
-cd ~/ros2_ws/src/fps_monitor
+cd ~/ros2_ws/src/robosys2025_fps_monitor
 git add README.md
 git commit -m "Update install instructions to generic style"
 git push
@@ -52,23 +52,23 @@ git push
 ### 1. Launchファイルによる実行
 Launchファイルを使用して、センサーシミュレータと計算ノードを同時に起動します。
 ```Bash
-ros2 launch fps_monitor fps_launch.py
+ros2 launch robosys2025_fps_monitor fps_launch.py
 ```
 
 ### 2. 個別に実行する場合
 端末1: センサーシミュレータ（データ送信）
 ```Bash
-ros2 run fps_monitor sensor_sim
+ros2 run robosys2025_fps_monitor sensor_sim
 ```
 端末2: FPS計算（データ受信・表示）
 ```Bash
-ros2 run fps_monitor fps_calc
+ros2 run robosys2025_fps_monitor fps_calc
 ```
 
 ## 確認方法（rqt_plot）
 グラフでFPSの変動を確認できます。
 
-1. ros2 launch fps_monitor fps_launch.py を実行中に、新しい端末を開く。
+1. ros2 launch robosys2025_fps_monitor fps_launch.py を実行中に、新しい端末を開く。
 
 2. 以下のコマンドを実行。
 ```Bash
