@@ -34,7 +34,7 @@ git push
 ```
 
 ## 実行方法
-### 1. シミュレーションと計算の同時実行（推奨）
+### 1. Launchファイルによる実行
 Launchファイルを使用して、センサーシミュレータと計算ノードを同時に起動します。
 ```Bash
 ros2 launch fps_monitor fps_launch.py
@@ -53,13 +53,13 @@ ros2 run fps_monitor fps_calc
 ## 確認方法（rqt_plot）
 グラフでFPSの変動を確認できます。
 
-### 1. ros2 launch fps_monitor fps_launch.py を実行中に、新しい端末を開く。
+1. ros2 launch fps_monitor fps_launch.py を実行中に、新しい端末を開く。
 
-### 2. 以下のコマンドを実行。
+2. 以下のコマンドを実行。
 ```Bash
 ros2 run rqt_plot rqt_plot
 ```
-### 3. Topic欄に /current_fps/data と入力して追加する。
+3. Topic欄に /current_fps/data と入力して追加する。
 
 ## ライセンス
 このソフトウェアは、BSD 3-Clause License の下で公開されています。 詳細については LICENSE をご確認ください。
